@@ -1,0 +1,6 @@
+{"time":"2025-08-15T14:23:49.749161553+08:00","level":"INFO","msg":"main: starting server","port-filename":"/tmp/tmpeplyaopo/port-116112.txt","pid":116112,"log-level":0,"disable-analytics":false,"shutdown-on-parent-exit":false,"enable-dcgm-profiling":false}
+{"time":"2025-08-15T14:23:49.750239537+08:00","level":"INFO","msg":"server: will exit if parent process dies","ppid":116112}
+{"time":"2025-08-15T14:23:49.750214137+08:00","level":"INFO","msg":"server: accepting connections","addr":{"Name":"/tmp/wandb-116112-119406-595773756/socket","Net":"unix"}}
+{"time":"2025-08-15T14:23:49.913164634+08:00","level":"INFO","msg":"connection: ManageConnectionData: new connection created","id":"1(@)"}
+{"time":"2025-08-15T14:23:49.918507363+08:00","level":"INFO","msg":"handleInformInit: received","streamId":"5hfmfgcv","id":"1(@)"}
+{"time":"2025-08-15T14:27:53.924173994+08:00","level":"INFO","msg":"server: parent process exited, terminating service process"}

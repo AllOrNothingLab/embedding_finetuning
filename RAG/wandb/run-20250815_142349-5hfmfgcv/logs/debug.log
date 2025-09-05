@@ -1,0 +1,73 @@
+2025-08-15 14:23:49,690 INFO    MainThread:116112 [wandb_setup.py:_flush():80] Current SDK version is 0.21.1
+2025-08-15 14:23:49,690 INFO    MainThread:116112 [wandb_setup.py:_flush():80] Configure stats pid to 116112
+2025-08-15 14:23:49,690 INFO    MainThread:116112 [wandb_setup.py:_flush():80] Loading settings from /root/.config/wandb/settings
+2025-08-15 14:23:49,693 INFO    MainThread:116112 [wandb_setup.py:_flush():80] Loading settings from /workspace/volume/gxs2/zht/project4/QW3/RAG/wandb/settings
+2025-08-15 14:23:49,693 INFO    MainThread:116112 [wandb_setup.py:_flush():80] Loading settings from environment variables
+2025-08-15 14:23:49,695 INFO    MainThread:116112 [wandb_init.py:setup_run_log_directory():703] Logging user logs to /workspace/volume/gxs2/zht/project4/QW3/RAG/wandb/run-20250815_142349-5hfmfgcv/logs/debug.log
+2025-08-15 14:23:49,697 INFO    MainThread:116112 [wandb_init.py:setup_run_log_directory():704] Logging internal logs to /workspace/volume/gxs2/zht/project4/QW3/RAG/wandb/run-20250815_142349-5hfmfgcv/logs/debug-internal.log
+2025-08-15 14:23:49,699 INFO    MainThread:116112 [wandb_init.py:init():830] calling init triggers
+2025-08-15 14:23:49,701 INFO    MainThread:116112 [wandb_init.py:init():835] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2025-08-15 14:23:49,702 INFO    MainThread:116112 [wandb_init.py:init():871] starting backend
+2025-08-15 14:23:49,913 INFO    MainThread:116112 [wandb_init.py:init():874] sending inform_init request
+2025-08-15 14:23:49,916 INFO    MainThread:116112 [wandb_init.py:init():882] backend started and connected
+2025-08-15 14:23:49,918 INFO    MainThread:116112 [wandb_init.py:init():953] updated telemetry
+2025-08-15 14:23:49,919 INFO    MainThread:116112 [wandb_init.py:init():977] communicating run to backend with 90.0 second timeout
+2025-08-15 14:24:20,778 INFO    Thread-3 (wrapped_target):116112 [retry.py:__call__():173] [no run ID] Retry attempt failed:
+Traceback (most recent call last):
+  File "/torch/venv3/pytorch/lib/python3.10/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/torch/venv3/pytorch/lib/python3.10/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/torch/venv3/pytorch/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/torch/venv3/pytorch/lib/python3.10/site-packages/urllib3/connectionpool.py", line 716, in urlopen
+    httplib_response = self._make_request(
+  File "/torch/venv3/pytorch/lib/python3.10/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/torch/venv3/pytorch/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1061, in _validate_conn
+    conn.connect()
+  File "/torch/venv3/pytorch/lib/python3.10/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+  File "/torch/venv3/pytorch/lib/python3.10/site-packages/urllib3/connection.py", line 179, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7f7e5c1352a0>, 'Connection to api.wandb.ai timed out. (connect timeout=20)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/torch/venv3/pytorch/lib/python3.10/site-packages/requests/adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "/torch/venv3/pytorch/lib/python3.10/site-packages/urllib3/connectionpool.py", line 802, in urlopen
+    retries = retries.increment(
+  File "/torch/venv3/pytorch/lib/python3.10/site-packages/urllib3/util/retry.py", line 594, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f7e5c1352a0>, 'Connection to api.wandb.ai timed out. (connect timeout=20)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/torch/venv3/pytorch/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 134, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/torch/venv3/pytorch/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 398, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/torch/venv3/pytorch/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/torch/venv3/pytorch/lib/python3.10/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/torch/venv3/pytorch/lib/python3.10/site-packages/wandb/sdk/lib/gql_request.py", line 58, in execute
+    request = self.session.post(self.url, **post_args)
+  File "/torch/venv3/pytorch/lib/python3.10/site-packages/requests/sessions.py", line 635, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "/torch/venv3/pytorch/lib/python3.10/site-packages/requests/sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/torch/venv3/pytorch/lib/python3.10/site-packages/requests/sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "/torch/venv3/pytorch/lib/python3.10/site-packages/requests/adapters.py", line 553, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f7e5c1352a0>, 'Connection to api.wandb.ai timed out. (connect timeout=20)'))
